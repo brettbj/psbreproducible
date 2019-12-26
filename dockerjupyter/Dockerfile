@@ -31,10 +31,10 @@ RUN R -e "install.packages('knitr', repos='http://cran.us.r-project.org');"
 RUN R -e "install.packages('devtools', repos='http://cran.us.r-project.org');"
 RUN R -e "install.packages('roxygen2', repos='http://cran.us.r-project.org');"
 
-# Get Script - could just clone
-RUN wget -q https://raw.githubusercontent.com/brettbj/psbreproducible/master/Example.ipynb -P /home/jovyan/work
-RUN chmod 777 /home/jovyan/work
-
 RUN git clone https://github.com/bmbolstad/preprocessCore.git
 RUN cd preprocessCore/
 RUN R CMD INSTALL preprocessCore --configure-args="--disable-threading"  .
+
+# Get Script - could just clone
+RUN wget -q https://raw.githubusercontent.com/brettbj/psbreproducible/master/Example.ipynb -P /home/jovyan/work
+RUN chmod 777 /home/jovyan/work

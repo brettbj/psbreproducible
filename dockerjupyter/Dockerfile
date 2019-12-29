@@ -36,5 +36,5 @@ RUN cd preprocessCore/
 RUN R CMD INSTALL preprocessCore --configure-args="--disable-threading"  .
 
 # Get Script - could just clone
-RUN wget -q https://raw.githubusercontent.com/brettbj/psbreproducible/master/Example.ipynb -P /home/jovyan/work
 RUN chmod 777 /home/jovyan/work
+RUN wget -q https://raw.githubusercontent.com/brettbj/psbreproducible/master/Example.ipynb -P /home/jovyan/work
